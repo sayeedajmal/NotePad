@@ -1,0 +1,11 @@
+.Save:hover,
+.Edit:hover,
+.Format:hover,
+.View:hover,
+.Help:hover {
+  -fx-background-color: rgb(71, 67, 67);
+  -fx-text-fill: white;
+}
+.textarea {
+  -fx-text-fill: black;
+}
