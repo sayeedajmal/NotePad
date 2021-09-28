@@ -5,10 +5,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextArea;
-
 import javafx.fxml.Initializable;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -18,10 +16,12 @@ public class Controller implements Initializable {
     public JFXTextArea textarea = new JFXTextArea();
     JFXButton Save = new JFXButton();
 
+    /* THIS WILL EXECUTE FILECHOOSER */
     public void Save() {
         String inputText = textarea.getText();
         FileChooser fileChooser = new FileChooser();
 
+        fileChooser.setTitle("SAVE THIS FILE WITH NAME: ");
         // Set extension filter for text files
         FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
         fileChooser.getExtensionFilters().add(extFilter);
@@ -35,6 +35,7 @@ public class Controller implements Initializable {
 
     }
 
+    /* saving the test by printing the text into the file */
     private void saveTextToFile(String inputText, File file) {
         try {
             PrintWriter writer;
@@ -46,7 +47,8 @@ public class Controller implements Initializable {
         }
     }
 
-    public void Help() {
+    /* Exiting */
+    public void Exit() {
         System.exit(0);
     }
 

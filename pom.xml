@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.notePad</groupId>
+    <groupId>com.notepad.application</groupId>
     <artifactId>notepad</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -9,7 +9,7 @@
     <name>JavaFx</name>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mainClass>com.Javafx.MainApp</mainClass>
+        <mainClass>com.notepad.application</mainClass>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
     </properties>
@@ -42,7 +42,7 @@
             <artifactId>fontawesomefx</artifactId>
             <version>8.2</version>
         </dependency>
-        
+
     </dependencies>
 
 
@@ -57,17 +57,33 @@
                     <target>15</target>
                 </configuration>
             </plugin>
+            <!-- PACKAGING OF NATIVE APPLICATIONS -->
+            <!-- <plugin>
+                <groupId>io.github.fvarrui</groupId>
+                <artifactId>javapackager</artifactId>
+                <version>1.6.1</version>
+                <configuration>
+                    <bundleJre>true</bundleJre>
+                    <mainClass>com.notepad.application</mainClass>
+                    <generateInstaller>false</generateInstaller>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>bundling-for-windows</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>package</goal>
+                        </goals>
+                        <configuration>
+                            <platform>windows</platform>
+                            <createZipball>true</createZipball>
+                            <bundleJre>true</bundleJre>
+                            <jrePath>C:\Program Files\Java\jre1.8.0_231</jrePath>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin> -->
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-install-plugin</artifactId>
-                <version>2.5.2</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-deploy-plugin</artifactId>
-                <version>2.8.2</version>
-            </plugin>
         </plugins>
     </build>
 </project>
