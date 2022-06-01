@@ -2,13 +2,6 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Launch BasicCalculator",
-            "request": "launch",
-            "mainClass": "com.notepad.BasicCalculator",
-            "projectName": "notepad"
-        },
-        {
-            "type": "java",
             "name": "Launch LAUNCH",
             "request": "launch",
             "mainClass": "com.notepad.LAUNCH",

@@ -19,7 +19,6 @@ public class application extends Application {
         primaryStage.setTitle("NotePad");
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/notepad.fxml"));
         Scene scene = new Scene(root);
-        scene.getStylesheets().add("/style/style.css");
         Image icon = new Image("/images/icon.png");
         primaryStage.getIcons().add(icon);
         primaryStage.setScene(scene);
