@@ -15,23 +15,33 @@ public class Controller implements Initializable {
     Stage primaryStage = new Stage();
     public JFXTextArea textarea = new JFXTextArea();
     JFXButton Save = new JFXButton();
+    public static File FileUrl;
 
     /* THIS WILL EXECUTE FILECHOOSER */
     public void Save() {
         String inputText = textarea.getText();
         FileChooser fileChooser = new FileChooser();
 
-        fileChooser.setTitle("SAVE THIS FILE WITH NAME: ");
+        fileChooser.setTitle("Save File: ");
         // Set extension filter for text files
-        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
+        FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("txt files (*.txt)", "*.txt");
         fileChooser.getExtensionFilters().add(extFilter);
 
         // Show save file dialog
-        File file = fileChooser.showSaveDialog(primaryStage);
+        FileUrl= fileChooser.showSaveDialog(primaryStage);
 
-        if (file != null) {
-            saveTextToFile(inputText, file);
+        if (FileUrl != null) {
+            saveTextToFile(inputText, FileUrl);
         }
+
+    }
+
+    public void Open() {
+        FileChooser chooser = new FileChooser();
+        chooser.setTitle("Open File");
+        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("txt files (*.txt)", "*.txt");
+        chooser.getExtensionFilters().add(filter);
+        FileUrl = chooser.showOpenDialog(primaryStage);
 
     }
 
@@ -55,5 +65,8 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+    }
+
+    public void New() {
     }
 }

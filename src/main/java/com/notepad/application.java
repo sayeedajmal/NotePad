@@ -1,6 +1,7 @@
 package com.notepad;
 
 import javafx.application.Application;
+import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,7 +18,7 @@ public class application extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("NotePad");
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/notepad.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Dashboard.fxml"));
         Scene scene = new Scene(root);
         Image icon = new Image("/images/icon.png");
         primaryStage.getIcons().add(icon);
@@ -30,6 +31,9 @@ public class application extends Application {
             final KeyCombination save = new KeyCodeCombination(KeyCode.S, KeyCombination.CONTROL_DOWN);
             final KeyCombination exit = new KeyCodeCombination(KeyCode.ESCAPE, KeyCombination.CONTROL_DOWN);
 
+            final KeyCombination New = new KeyCodeCombination(KeyCode.N, KeyCombination.CONTROL_DOWN);
+            final KeyCombination Open = new KeyCodeCombination(KeyCode.O, KeyCombination.CONTROL_DOWN);
+
             @Override
             public void handle(KeyEvent event) {
                 Controller controller = new Controller();
@@ -39,8 +43,15 @@ public class application extends Application {
                 if (exit.match(event)) {
                     controller.Exit();
                 }
+                if(Open.match(event)) {
+                    controller.Open();
+                }
+                if(New.match(event)){
+                    controller.New();
+                }
             }
         });
+
     }
 
     public static void main(String[] args) {

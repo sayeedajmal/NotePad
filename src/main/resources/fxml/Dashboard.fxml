@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" styleClass="pane" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.notepad.Controller">
+   <children>
+      <MenuBar layoutY="1.0" prefHeight="700.0" prefWidth="1000.0" stylesheets="@../style/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" styleClass="menu" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#New" style="-fx-padding: 5px; -fx-text-fill: blue;" text="New">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+              <MenuItem mnemonicParsing="false" onAction="#Open" style="-fx-padding: 4px; -fx-text-fill: blue;" text="Open">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#Save" style="-fx-padding: 5px; -fx-text-fill: blue;" text="Save">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+               <MenuItem mnemonicParsing="false" onAction="#Exit" style="-fx-padding: 5px; -fx-text-fill: red;" text="Exit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" styleClass="menu" text="Edit">
+            <items>
+                  <MenuItem mnemonicParsing="false" style="-fx-padding: 5px; -fx-text-fill: blue;" text="Cut">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="X" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+              <MenuItem mnemonicParsing="false" style="-fx-padding: 5px; -fx-text-fill: red;" text="Undo">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Z" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem mnemonicParsing="false" style="-fx-padding: 5px; -fx-text-fill: blue;" text="Paste">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem mnemonicParsing="false" style="-fx-padding: 5px; -fx-text-fill: blue;" text="Sellect All">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="A" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" styleClass="menu" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" style="-fx-padding: 5px; -fx-text-fill: lightgreen;" text="About Notepad" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <JFXTextArea layoutY="37.0" style="-fx-background-color: white;" styleClass="textarea" stylesheets="@../style/style.css" unFocusColor="WHITE" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
+         <font>
+            <Font name="Liberation Sans" size="21.0" />
+         </font></JFXTextArea>
+   </children>
+</AnchorPane>

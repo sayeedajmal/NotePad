@@ -1,11 +1,11 @@
-.Save:hover,
-.Edit:hover,
-.Format:hover,
-.View:hover,
-.Exit:hover {
-  -fx-background-color: rgb(71, 67, 67);
-  -fx-text-fill: white;
-}
 .textarea {
   -fx-text-fill: black;
+}
+.pane{
+  -fx-font-family: 'Courier New', Courier, monospace;
+}
+
+.menu{
+  -fx-border-radius: 10px;
+  -fx-font-size: 18px;
 }
